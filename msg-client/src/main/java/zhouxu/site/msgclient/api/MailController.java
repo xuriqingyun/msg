@@ -7,7 +7,6 @@ import zhouxu.site.msgclient.pojo.Mail;
 import zhouxu.site.msgclient.service.MailService;
 import zhouxu.site.msgclient.utils.RestResult;
 
-import javax.mail.MessagingException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,12 +22,12 @@ public class MailController {
     private MailService mailService;
 
     @PostMapping("/send")
-    public RestResult sendMail(@RequestBody Mail mail) throws MessagingException {
+    public RestResult sendMail(@RequestBody Mail mail)  {
         return RestResult.Success(mailService.sendEmail(mail));
     }
 
     @GetMapping("/sendDemo")
-    public RestResult sendDemoMail() throws MessagingException {
+    public RestResult sendDemoMail() {
         Mail mail = new Mail("devoperation@163.com","1136112121@qq.com","mq mail",
                 "this is a simpletext mail",
                 null,

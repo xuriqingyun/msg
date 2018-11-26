@@ -8,7 +8,6 @@ import zhouxu.site.msgclient.pojo.Mail;
 import zhouxu.site.msgclient.service.MailService;
 import zhouxu.site.msgclient.utils.JsonUtils;
 
-import javax.mail.MessagingException;
 
 
 
@@ -41,12 +40,12 @@ public class MailServiceImpl implements MailService {
     }
 
     @Override
-    public boolean sendMimeMail(Mail mail) throws MessagingException {
+    public boolean sendMimeMail(Mail mail)  {
         return false;
     }
 
     @Override
-    public boolean sendEmail(Mail mail) throws MessagingException {
+    public boolean sendEmail(Mail mail)  {
         switch (mail.getMailType()){
             case SIMPLETEXT:return this.sendSimpleTextMail(mail);
             case MIME:return this.sendMimeMail(mail);

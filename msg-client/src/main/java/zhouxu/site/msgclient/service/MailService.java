@@ -3,8 +3,6 @@ package zhouxu.site.msgclient.service;
 
 import zhouxu.site.msgclient.pojo.Mail;
 
-import javax.mail.MessagingException;
-
 /**
  * Created with IntelliJ IDEA.
  * Description:邮件服务接口定义
@@ -31,7 +29,7 @@ public interface MailService {
      * @return boolean
      * @throws
      **/
-    boolean sendMimeMail(Mail mail) throws MessagingException;
+    boolean sendMimeMail(Mail mail);
 
     /**
      * @Author zhouxu
@@ -41,5 +39,5 @@ public interface MailService {
      * @return boolean
      * @throws
      **/
-    boolean sendEmail(Mail mail) throws MessagingException;
+    boolean sendEmail(Mail mail);
 }
