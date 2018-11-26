@@ -31,7 +31,6 @@ public class MailServiceImpl implements MailService {
     @Override
     public boolean sendSimpleTextMail(Mail mail) {
         try{
-            System.out.println(routingKey);
             rabbitTemplate.convertAndSend(exhange,routingKey,JsonUtils.toJson(mail));
         }catch (Exception e){
             return false;
